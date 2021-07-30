@@ -1,0 +1,73 @@
+﻿<Window x:Class="VegetablesBase.ChooseModeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VegetablesBase"
+        mc:Ignorable="d"
+        Title="ChooseModeWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Отбор по типу" Grid.Row="3" Grid.Column="3" FontSize="14" TextWrapping="Wrap" TextAlignment="Center"/>
+        <TextBlock Text="Выберите режим" Grid.Row="1" Grid.Column="3" FontSize="14" TextWrapping="Wrap" TextAlignment="Center"/>
+        <TextBlock Text="Выберите параметры" Grid.Row="1" Grid.Column="5" Grid.ColumnSpan ="3" FontSize="14" TextWrapping="Wrap" TextAlignment="Center"/>
+        <ComboBox x:Name="ListOfTypes" Grid.Row="3" Grid.Column="5" Grid.ColumnSpan ="3">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text ="{Binding Path=Name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock Text="Отбор по цвету" Grid.Row="5" Grid.Column="3" FontSize="14" TextWrapping="Wrap" TextAlignment="Center"/>
+        <ComboBox x:Name="ListOfColors" Grid.Row="5" Grid.Column="5" Grid.ColumnSpan ="3">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text ="{Binding Path=Name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock Text="Отбор по калорийности ниже:" Grid.Row="7" Grid.Column="3" FontSize="14" TextWrapping="Wrap" TextAlignment="Center"/>
+        <TextBox x:Name="minCalory" Grid.Row="7" Grid.Column="5" Grid.ColumnSpan="3" FontSize="14" TextWrapping="Wrap" TextAlignment="Center"/>
+        <TextBlock Text="Отбор по калорийности выше:" Grid.Row="9" Grid.Column="3" FontSize="14" TextWrapping="Wrap" TextAlignment="Center"/>
+        <TextBox x:Name="maxCalory" Grid.Row="9" Grid.Column="5" Grid.ColumnSpan="3" FontSize="14" TextWrapping="Wrap" TextAlignment="Center"/>
+        <TextBlock Text="Отбор по калорийности в диапазоне:" Grid.Row="11" Grid.Column="3" FontSize="14" TextWrapping="Wrap" TextAlignment="Center"/>
+        <TextBox x:Name="startCalory" Grid.Row="11" Grid.Column="5" FontSize="14" TextWrapping="Wrap" TextAlignment="Center"/>
+        <TextBox x:Name="endCalory" Grid.Row="11" Grid.Column="7" FontSize="14" TextWrapping="Wrap" TextAlignment="Center"/>
+        <Button x:Name="newModeButton" Content="Принять" Grid.Row="13" Grid.Column="5" Grid.ColumnSpan ="3" FontSize="14" Click="newModeButton_Click"/>
+        <Button x:Name="canselButton" Content="Отмена" Grid.Row="15" Grid.Column="5" Grid.ColumnSpan ="3" FontSize="14" Click="canselButton_Click"/>
+        <CheckBox x:Name="checkType" IsChecked="False" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <CheckBox x:Name="checkColor" IsChecked="False" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <CheckBox x:Name="checkMinCalory" IsChecked="False" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Checked="checkCalory_Checked"/>
+        <CheckBox x:Name="checkMaxCalory" IsChecked="False" Grid.Row="9" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Checked="checkCalory_Checked"/>
+        <CheckBox x:Name="checkRangeCalory" IsChecked="False" Grid.Row="11" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Checked="checkCalory_Checked"/>
+    </Grid>
+</Window>

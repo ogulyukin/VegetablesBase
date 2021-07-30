@@ -1,0 +1,40 @@
+﻿<Window x:Class="VegetablesBase.AddTypeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VegetablesBase"
+        mc:Ignorable="d"
+        Title="Добавление нового типа товара" Height="200" Width="360">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Введите название типа" Grid.Row="1" Grid.Column="3" FontSize="14" TextWrapping="Wrap" TextAlignment="Center"/>
+        <TextBox x:Name="newTypeText" Grid.Row="3" Grid.Column="3" FontSize="14" TextAlignment="Center"/>
+        <Button x:Name="newTypeButton" Content="Принять" Grid.Row="5" Grid.Column="3" FontSize="14" Click="newTypeButton_Click"/>
+        <Button x:Name="canselButton" Content="Отмена" Grid.Row="7" Grid.Column="3" FontSize="14" Click="canselButton_Click"/>
+        <ListBox x:Name="TypesList" Grid.Row="1" Grid.Column="1" Grid.RowSpan="7">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <ListBoxItem Content="{Binding Path=Name}"/>
+                </DataTemplate>
+             </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

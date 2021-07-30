@@ -1,0 +1,69 @@
+﻿<Window x:Class="VegetablesBase.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VegetablesBase"
+        mc:Ignorable="d"
+        Title="База овощей и фруктов" Height="450" Width="850">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="2.5*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="LoadData" Content="Загрузить данные из базы" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="5" FontSize="14" Click="LoadData_Click"/>
+        <TextBlock x:Name="TableMode" Text="Режим отображения" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="5" FontSize="14" TextAlignment="Center"/>
+        <Button x:Name="AllGoogs"  Grid.Row="3" Grid.Column="3" Click="AllGoogs_Click">
+            <TextBlock Text="Все товары" TextWrapping="Wrap" FontSize="14"/>
+        </Button>
+        <Button x:Name="NamesGoods" Grid.Row="3" Grid.Column="5" FontSize="14" Click="NamesGoods_Click">
+            <TextBlock Text="Названия товаров" TextWrapping="Wrap" FontSize="14" TextAlignment="Center"/>
+        </Button>
+        <Button x:Name="ChooseMode"  Grid.Row="3" Grid.Column ="7" Click="ChoseMode_Click">
+            <TextBlock Text="Выберите режим" TextWrapping="Wrap" FontSize="14" TextAlignment="Center"/>
+        </Button>
+        <TextBlock x:Name="CaloryText" Text="Калорийность" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="5" FontSize="14" TextAlignment="Center"/>
+        <TextBlock x:Name="AverageCaloryText" Grid.Row="5" Grid.Column="3" FontSize="14" TextAlignment="Center" TextWrapping="Wrap"/>
+        <TextBlock x:Name="MaxCaloryText" Grid.Row="5" Grid.Column="5" FontSize="14" TextAlignment="Center" TextWrapping="Wrap"/>
+        <TextBlock x:Name="MinCaloryText" Grid.Row="5" Grid.Column="7" FontSize="14" TextAlignment="Center" TextWrapping="Wrap"/>
+        <TextBlock x:Name="AddingItemText" Text="Добавление элементов в базу" Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="5" FontSize="14" TextAlignment="Center"/>
+        <Button x:Name="AddGood" Grid.Row="7" Grid.Column="3" Click="AddData_Click">
+            <TextBlock Text="Добавить товар" TextWrapping="Wrap" FontSize="14" TextAlignment="Center"/>
+        </Button>
+        <Button x:Name="AddColor" Grid.Row="7" Grid.Column="5" Click="AddData_Click">
+            <TextBlock Text="Добавить цвет" TextWrapping="Wrap" FontSize="14" TextAlignment="Center"/>
+        </Button>
+        <Button x:Name="AddType" Grid.Row="7" Grid.Column="7" Click="AddData_Click">
+            <TextBlock Text="Добавить тип" TextWrapping="Wrap" FontSize="14" TextAlignment="Center"/>
+        </Button>
+        <TextBlock x:Name="SummaryText" Text="Итого выбрано элементов 0" Grid.Row="9" Grid.Column="1" FontSize="14" TextAlignment="Center"/>
+        <Button x:Name="ColorSummary" Content="Отчет по цветам" Grid.Row="9" Grid.Column="3" Grid.ColumnSpan="5" Click="ColorSummary_Click"/>
+        <ListBox x:Name="InformationView" Grid.Row="1" Grid.Column="1" Grid.RowSpan="7">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <ListBoxItem Content="{Binding Path=Name}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

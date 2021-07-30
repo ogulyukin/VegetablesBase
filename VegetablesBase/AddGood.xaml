@@ -1,0 +1,71 @@
+﻿<Window x:Class="VegetablesBase.AddGood"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VegetablesBase"
+        mc:Ignorable="d"
+        Title="Добавление нового товара" Height="300" Width="650">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Введите название" Grid.Row="1" Grid.Column="3" FontSize="14" TextWrapping="Wrap" TextAlignment="Center"/>
+        <TextBlock Text="Существующие товары в базе" Grid.Row="1" Grid.Column="1" FontSize="14" TextWrapping="Wrap" TextAlignment="Center"/>
+        <TextBox x:Name="newGoodText" Grid.Row="3" Grid.Column="3" FontSize="14" TextAlignment="Center"/>
+        <TextBlock Text="Выберите тип" Grid.Row="5" Grid.Column="3" FontSize="14" TextWrapping="Wrap" TextAlignment="Center"/>
+        <ComboBox x:Name="ListOfTypes" Grid.Row="7" Grid.Column="3">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text ="{Binding Path=Name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock Text="Выберите цвет" Grid.Row="9" Grid.Column="3" FontSize="14" TextWrapping="Wrap" TextAlignment="Center"/>
+        <ComboBox x:Name="ListOfColors" Grid.Row="11" Grid.Column="3">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text ="{Binding Path=Name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock Text="Введите калорийность" Grid.Row="13" Grid.Column="3" FontSize="14" TextWrapping="Wrap" TextAlignment="Center"/>
+        <TextBox x:Name="newCaloryText" Grid.Row="15" Grid.Column="3" FontSize="14" TextAlignment="Center"/>
+        <Button x:Name="newGoodButton" Content="Принять" Grid.Row="17" Grid.Column="3" FontSize="14" Click="newGoodButton_Click"/>
+        <Button x:Name="canselButton" Content="Отмена" Grid.Row="19" Grid.Column="3" FontSize="14" Click="canselButton_Click"/>
+        <ListBox x:Name="ListOfGoods" Grid.Row="3" Grid.Column="1" Grid.RowSpan="17">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <ListBoxItem Content="{Binding Path=Name}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>
